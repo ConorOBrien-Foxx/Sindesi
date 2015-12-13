@@ -1,22 +1,3 @@
 function Sindesi(code){
-	var trans = "";
-	var enc={};
-	for(var i=0;i<code.length;i++){
-		switch(code[i]){
-			case "R":
-				trans+="r=";
-			break;
-			case ";":
-				trans+="\n";
-			break;
-			default:
-				if(code[i].toLowerCase()==code[i]){
-					if(!enc[code[i]]){
-						trans+=code[i]+"=";
-						enc[code[i]]=true;
-					}
-				}
-			break;
-		}
-	}
+	return code.replace(/\)/g,"\\right)").replace(/#/g,"}{").replace(/~c/g,"\\cos\\left(").replace(/~C/g,"\\arccos\\left(").replace(/~s/g,"\\sin\\left(").replace(/~S/g,"\\arcsin\\left(").replace(/~t/g,"\\tan\\left(").replace(/~T/g,"\\arctan\\left(").replace(/~a/g,"\\sec\\left(").replace(/~A/g,"\\arcsec\\left(").replace(/~e/g,"\\csc\\left(").replace(/~E/g,"\\arccsc\\left(").replace(/~o/g,"\\cot\\left(").replace(/~O/g,"\\arccot\\left(").replace(/~q/g,"\\sqrt\\left(").replace(/~Q/g,"\\sqrt[3]\\left(").replace(/~-/g,"^{-1}").replace(/~%/g,"/100").replace(/%/g,"\\mod\\left(").replace(/&(.)/g,function(a,b){return b.charCodeAt()});
 }
