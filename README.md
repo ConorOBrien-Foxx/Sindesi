@@ -1,0 +1,2 @@
+# Sindesi
+Shortened Desmos
